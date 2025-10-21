@@ -1,0 +1,41 @@
+{
+    "frappe": {
+        "resolution": {
+            "commit_hash": null,
+            "branch": null
+        },
+        "required": [],
+        "idx": 1,
+        "version": "15.83.0"
+    },
+    "erpnext": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "f54933e6571c0e6bd8c0ebbaa7eded57dbf73a4f",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "15.80.1"
+    },
+    "infintrix_theme": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "6ca5c23c5ee63742efc4e50783e24d8d55337666",
+            "branch": "develop"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "0.0.1"
+    },
+    "posawesome": {
+        "is_repo": true,
+        "resolution": {
+            "commit_hash": "9be80eb8b148c8d118220291fe748ceb39a27167",
+            "branch": "version-15"
+        },
+        "required": [],
+        "idx": 4,
+        "version": "15.2.3"
+    }
+}

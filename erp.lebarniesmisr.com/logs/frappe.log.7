@@ -1,0 +1,920 @@
+2025-09-29 18:19:54,135 ERROR frappe Could not take error snapshot: No module named 'posawesome'
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 71, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:19:54,138 ERROR frappe Failed to run after request hook
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:20:11,020 ERROR frappe Could not take error snapshot: No module named 'posawesome'
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 71, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:20:11,022 ERROR frappe Failed to run after request hook
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:20:24,160 ERROR frappe Could not take error snapshot: No module named 'posawesome'
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 71, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:20:24,162 ERROR frappe Failed to run after request hook
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:20:41,022 ERROR frappe Could not take error snapshot: No module named 'posawesome'
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 71, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:20:41,024 ERROR frappe Failed to run after request hook
+Site: pos.com
+Form Dict: {'pos_profile': '{"name":"القاهرة 1","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":0,"company":"لوبارنيز كافية","customer":"عميل محلي فرع القاهرة 1","country":"Egypt","disabled":0,"warehouse":"مخازن - Café","posa_allow_delete":0,"posa_allow_user_to_edit_rate":0,"posa_allow_user_to_edit_additional_discount":0,"posa_use_percentage_discount":0,"posa_max_discount_allowed":0,"posa_scale_barcode_start":221,"posa_allow_change_posting_date":0,"posa_show_customer_balance":1,"posa_default_card_view":1,"posa_default_sales_order":0,"posa_allow_user_to_edit_item_discount":0,"posa_display_items_in_stock":0,"posa_allow_partial_payment":0,"posa_allow_credit_sale":0,"posa_allow_return":0,"posa_allow_return_without_invoice":0,"posa_apply_customer_discount":0,"use_cashback":0,"use_customer_credit":0,"posa_hide_closing_shift":0,"posa_auto_set_batch":0,"posa_display_item_code":0,"posa_allow_zero_rated_items":0,"hide_expected_amount":0,"posa_allow_sales_order":0,"posa_show_template_items":0,"posa_hide_variants_items":0,"posa_fetch_coupon":0,"posa_allow_customer_purchase_order":0,"posa_allow_print_last_invoice":0,"posa_display_additional_notes":0,"posa_allow_write_off_change":0,"posa_new_line":0,"posa_input_qty":0,"posa_allow_print_draft_invoices":0,"posa_use_delivery_charges":0,"posa_auto_set_delivery_charges":0,"posa_allow_duplicate_customer_names":0,"posa_use_pos_awesome_payments":0,"posa_allow_make_new_payments":1,"posa_allow_reconcile_payments":1,"posa_allow_mpesa_reconcile_payments":0,"posa_allow_submissions_in_background_job":0,"posa_search_serial_no":0,"posa_search_batch_no":0,"posa_tax_inclusive":1,"posa_local_storage":1,"posa_use_server_cache":0,"posa_server_cache_duration":30,"pose_use_limit_search":0,"posa_search_limit":500,"posa_allow_multi_currency":0,"custom_allow_select_sales_order":0,"hide_images":0,"hide_unavailable_items":0,"auto_add_item_to_cart":0,"validate_stock_on_save":0,"print_receipt_on_order_complete":0,"update_stock":1,"ignore_pricing_rule":0,"allow_rate_change":0,"allow_discount_change":0,"disable_grand_total_to_default_mop":0,"allow_partial_payment":0,"selling_price_list":"البيع القياسية","currency":"EGP","write_off_account":"5111 - تكلفة البضاعة المباعة - Café","write_off_cost_center":"رئيسي - Café","write_off_limit":1,"disable_rounded_total":0,"apply_discount_on":"Grand Total","doctype":"POS Profile","item_groups":[],"payments":[{"name":"r94464i51b","owner":"amir@c.com","creation":"2025-09-29 21:07:38.009422","modified":"2025-09-29 21:07:38.009422","modified_by":"amir@c.com","docstatus":0,"idx":1,"default":1,"allow_in_returns":1,"mode_of_payment":"نقد","parent":"القاهرة 1","parentfield":"payments","parenttype":"POS Profile","doctype":"POS Payment Method"}],"applicable_for_users":[],"customer_groups":[]}', 'items_data': '[{"item_code":"كوب قهوة سادة","item_name":"كوب قهوة سادة","description":"كوب قهوة سادة","stock_uom":"Nos","image":"/files/bigstock--157064345_154796.jpg","is_stock_item":1,"has_variants":0,"variant_of":null,"item_group":"المنتجات","idx":0,"has_batch_no":0,"has_serial_no":0,"max_discount":0,"brand":null,"rate":25,"currency":"EGP","item_barcode":[],"actual_qty":9,"serial_no_data":[],"batch_no_data":[],"attributes":"","item_attributes":"","item_uoms":[{"uom":"Nos","conversion_factor":1}]}]'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:21:52,714 ERROR frappe Could not take error snapshot: No module named 'posawesome'
+Site: pos.com
+Form Dict: {'page': '{"name":"Home","title":"Home"}'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 71, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:21:52,717 ERROR frappe Failed to run after request hook
+Site: pos.com
+Form Dict: {'page': '{"name":"Home","title":"Home"}'}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:21:55,909 ERROR frappe Could not take error snapshot: No module named 'posawesome'
+Site: pos.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 86, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/error.py", line 61, in log_error
+    error_log = frappe.get_doc(
+                ^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1308, in get_doc
+    return frappe.model.document.get_doc(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/document.py", line 83, in get_doc
+    controller = get_controller(doctype)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 71, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/model/base_document.py", line 89, in import_controller
+    class_overrides = frappe.get_hooks("override_doctype_class")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+2025-09-29 18:21:55,912 ERROR frappe Failed to run after request hook
+Site: pos.com
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 100, in application
+    init_request(request)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 197, in init_request
+    for before_request_task in frappe.get_hooks("before_request"):
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/serve.py", line 19, in get_response
+    endpoint, renderer_instance = path_resolver.resolve()
+                                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 38, in resolve
+    resolve_redirect(self.path, request.query_string)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/path_resolver.py", line 117, in resolve_redirect
+    redirects = frappe.get_hooks("website_redirects")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 133, in application
+    response = handle_exception(e)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 396, in handle_exception
+    response = get_response("message", http_status_code=http_status_code)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/serve.py", line 23, in get_response
+    return handle_exception(e, endpoint, path, http_status_code)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/permissions.py", line 883, in wrapper
+    return fn(e, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/serve.py", line 37, in handle_exception
+    return ErrorPage(exception=e).render()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/page_renderers/error_page.py", line 7, in __init__
+    super().__init__(path=path, http_status_code=http_status_code)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 45, in __init__
+    self.set_template_path()
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/website/page_renderers/template_page.py", line 54, in set_template_path
+    app_path = frappe.get_app_path(app)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1483, in get_app_path
+    return get_pymodule_path(app_name, *joins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1513, in get_pymodule_path
+    return abspath(join(dirname(get_module(scrub(modulename)).__file__ or ""), *joins))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 57, in wrapper
+    return frappe.local.request_cache[func][args_key]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 5740354900026072187
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 147, in application
+    run_after_request_hooks(request, response)
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/app.py", line 162, in run_after_request_hooks
+    for after_request_task in frappe.get_hooks("after_request"):
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1619, in get_hooks
+    hooks = _dict(_load_app_hooks())
+                  ^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/utils/caching.py", line 59, in wrapper
+    return_val = func(*args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1588, in _load_app_hooks
+    app_hooks = get_module(f"{app}.hooks")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/frappeuser/frappe-bench/apps/frappe/frappe/__init__.py", line 1454, in get_module
+    return importlib.import_module(modulename)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'posawesome'

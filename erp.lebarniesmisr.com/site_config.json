@@ -1,0 +1,12 @@
+{
+ "db_name": "_ceb89ca5c8597196",
+ "db_password": "bVmsSF9PQ8kauhlQ",
+ "db_type": "mariadb",
+ "developer_mode": 1,
+ "domains": [
+  "erp.Lebarniesmisr.com"
+ ],
+ "maintenance_mode": 0,
+ "pause_scheduler": false,
+ "user_type_doctype_limit": "{\"employee_self_service\": 40}"
+}
